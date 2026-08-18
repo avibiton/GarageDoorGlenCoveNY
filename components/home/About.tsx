@@ -20,11 +20,11 @@ export default function About() {
           {/* Image side */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/pic-pic16.jpg"
-              alt="Garage door spring repair service"
+              src="https://images.unsplash.com/photo-1739203469638-d6f54c24a5da?w=1200&q=80&auto=format&fit=crop"
+              alt="Professional garage door technicians servicing a garage door opener"
               width={600}
-              height={450}
-              className="w-full object-cover"
+              height={750}
+              className="w-full object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-[#171717]/90 backdrop-blur-sm rounded-lg p-4">
