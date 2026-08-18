@@ -1,10 +1,12 @@
 import { LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface ServiceCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
   items?: string[];
+  href?: string;
 }
 
 export default function ServiceCard({
@@ -12,9 +14,15 @@ export default function ServiceCard({
   title,
   description,
   items,
+  href,
 }: ServiceCardProps) {
+  const Wrapper = href ? "a" : "div";
+
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100 flex flex-col h-full group">
+    <Wrapper
+      {...(href ? { href } : {})}
+      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100 flex flex-col h-full group"
+    >
       <div className="w-12 h-12 bg-[#155b91]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#155b91] transition-colors duration-300">
         <Icon
           size={24}
@@ -35,6 +43,11 @@ export default function ServiceCard({
           ))}
         </ul>
       )}
-    </div>
+      {href && (
+        <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1 text-[#155b91] text-sm font-semibold group-hover:gap-2 transition-all">
+          Learn More <ArrowRight size={14} />
+        </div>
+      )}
+    </Wrapper>
   );
 }

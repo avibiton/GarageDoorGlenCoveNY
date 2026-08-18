@@ -1,13 +1,13 @@
 import Container from "@/components/ui/Container";
-import { BUSINESS } from "@/lib/constants";
+import { BUSINESS, SERVICE_AREAS } from "@/lib/constants";
 import { MapPin, Phone } from "lucide-react";
 
 export default function LocationSection() {
   return (
     <section className="py-16 bg-white border-t border-gray-100">
       <Container>
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-8 mb-8">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-[#ff7a00]/10 flex items-center justify-center shrink-0">
                 <MapPin size={20} className="text-[#ff7a00]" />
@@ -40,10 +40,26 @@ export default function LocationSection() {
             </div>
           </div>
 
-          <p className="mt-6 text-sm text-gray-400">
-            Serving Glen Cove, Glen Head, Sea Cliff, Locust Valley, Oyster Bay,
-            and surrounding Long Island communities.
-          </p>
+          {/* Service area grid */}
+          <div className="text-center">
+            <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">
+              Service Area — Nassau County North Shore
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {SERVICE_AREAS.map((area) => (
+                <span
+                  key={area.name}
+                  className="bg-[#f5f5f5] border border-gray-200 rounded-full px-4 py-1.5 text-sm text-gray-600 font-medium"
+                >
+                  {area.name}
+                  {area.zip ? ` ${area.zip}` : ""}
+                </span>
+              ))}
+              <span className="bg-[#f5f5f5] border border-gray-200 rounded-full px-4 py-1.5 text-sm text-gray-600 font-medium">
+                Nassau County North Shore
+              </span>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

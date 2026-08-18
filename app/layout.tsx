@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { BUSINESS } from "@/lib/constants";
+import { BUSINESS, SERVICE_AREAS } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 const title = "Garage Door Repair Glen Cove NY | Same Day Service | 516-629-7162";
 const description =
-  "Professional garage door repair in Glen Cove, NY. Spring repair, opener installation, emergency service, and new door installation. Call 516-629-7162 for same-day service.";
+  "Professional garage door repair in Glen Cove NY 11542 and Glen Head 11545. Spring repair, opener installation, emergency service, and new door installation. Free estimate. Call 516-629-7162.";
 
 export const metadata: Metadata = {
-  title,
+  title: {
+    default: title,
+    template: `%s | Garage Doors Glen Cove NY`,
+  },
   description,
   metadataBase: new URL(BUSINESS.siteUrl),
   alternates: {
@@ -50,6 +53,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `${BUSINESS.siteUrl}/#business`,
     name: BUSINESS.name,
     url: BUSINESS.siteUrl,
     telephone: BUSINESS.phone,
@@ -69,10 +73,11 @@ export default function RootLayout({
       "Garage Door Installation",
       "Emergency Garage Door Service",
     ],
-    areaServed: {
-      "@type": "Place",
-      name: "Glen Cove, NY",
-    },
+    areaServed: SERVICE_AREAS.map((area) => ({
+      "@type": "City",
+      name: area.name,
+      ...(area.zip ? { postalCode: area.zip } : {}),
+    })),
   };
 
   return (

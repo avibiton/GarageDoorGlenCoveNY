@@ -1,27 +1,7 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import Container from "@/components/ui/Container";
 import CouponCard from "./CouponCard";
-
-const coupons = [
-  {
-    discount: "10%",
-    service: "Garage Door Repair",
-    description: "Save 10% on any garage door repair service.",
-    accent: "orange" as const,
-  },
-  {
-    discount: "$20",
-    service: "Spring Repair",
-    description: "$20 off garage door spring repair or replacement.",
-    accent: "blue" as const,
-  },
-  {
-    discount: "$75",
-    service: "New Door Installation",
-    description: "$75 off any new garage door installation.",
-    accent: "orange" as const,
-  },
-];
+import { COUPONS } from "@/lib/constants";
 
 export default function Coupons() {
   return (
@@ -30,14 +10,20 @@ export default function Coupons() {
         <div className="mb-12">
           <SectionHeading
             title="Special Offers & Coupons"
-            subtitle="Exclusive savings for our website customers. Call to redeem — no printing required."
+            subtitle="5 active discount codes for Glen Cove, Glen Head, and Nassau County North Shore. Mention your code when you call — no printing required."
           />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {coupons.map((c) => (
-            <CouponCard key={c.service} {...c} />
+          {COUPONS.map((c) => (
+            <CouponCard key={c.code} {...c} />
           ))}
         </div>
+        <p className="text-center text-sm text-gray-500 mt-8">
+          One coupon per service · Not valid with other offers ·{" "}
+          <a href="/faq/" className="text-[#155b91] font-semibold hover:underline">
+            View full FAQ & pricing →
+          </a>
+        </p>
       </Container>
     </section>
   );

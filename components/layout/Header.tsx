@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { BUSINESS, NAV_LINKS } from "@/lib/constants";
 import MobileMenu from "./MobileMenu";
+import Link from "next/link";
 import { Menu, Phone } from "lucide-react";
 
 export default function Header() {
@@ -27,8 +28,8 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="flex flex-col leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff7a00] rounded"
               aria-label={BUSINESS.name}
             >
@@ -39,18 +40,18 @@ export default function Header() {
               <span className="text-gray-400 text-xs hidden sm:block">
                 Professional Garage Door Services
               </span>
-            </a>
+            </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+            <nav className="hidden md:flex items-center gap-5" aria-label="Main navigation">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="text-gray-300 hover:text-white text-sm font-medium transition-colors focus-visible:outline-none focus-visible:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 

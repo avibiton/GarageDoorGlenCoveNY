@@ -3,31 +3,31 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // Static file redirect (handled here now that public/index.html is removed)
+      // Static file redirect (public/index.html was removed)
       {
         source: "/index.html",
         destination: "/",
         permanent: true,
       },
-      // Legacy URL patterns from the old site
       {
         source: "/index.php",
         destination: "/",
         permanent: true,
       },
+      // Legacy URL patterns → new sub-pages
       {
         source: "/garage-door-repair",
-        destination: "/#services",
+        destination: "/repair/",
         permanent: true,
       },
       {
         source: "/garage-door-springs",
-        destination: "/#services",
+        destination: "/repair/",
         permanent: true,
       },
       {
         source: "/garage-door-openers",
-        destination: "/#services",
+        destination: "/garage-door-opener/",
         permanent: true,
       },
       {

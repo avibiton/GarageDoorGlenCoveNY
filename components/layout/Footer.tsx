@@ -1,20 +1,20 @@
-import { BUSINESS } from "@/lib/constants";
+import { BUSINESS, SERVICE_AREAS } from "@/lib/constants";
 import { Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-[#111] text-gray-400 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-1">
             <div className="text-white font-black text-xl mb-2 tracking-tight">
               GARAGE DOORS{" "}
               <span className="text-[#ff7a00]">GLEN COVE NY</span>
             </div>
             <p className="text-sm text-gray-500 mb-4">
               Professional garage door repair, springs, openers, and
-              installation services for the Glen Cove and Long Island area.
+              installation for Glen Cove, Glen Head, and Nassau County North Shore.
             </p>
             <p className="text-xs text-gray-600">DBA {BUSINESS.dba}</p>
           </div>
@@ -26,23 +26,38 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-                "Garage Door Repair",
-                "Spring Repair & Replacement",
-                "Opener Repair & Installation",
-                "Garage Door Installation",
-                "Garage Door Locks",
-                "Residential & Commercial",
-                "Emergency Service",
+                { label: "Garage Door Repair", href: "/repair/" },
+                { label: "Spring Repair & Replacement", href: "/repair/" },
+                { label: "Opener Repair & Installation", href: "/garage-door-opener/" },
+                { label: "Garage Door Installation", href: "/installation/" },
+                { label: "FAQ & Coupons", href: "/faq/" },
+                { label: "Emergency Service", href: "/#contact" },
               ].map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <a
-                    href="#services"
+                    href={s.href}
                     className="hover:text-white transition-colors focus-visible:outline-none focus-visible:text-white"
                   >
-                    {s}
+                    {s.label}
                   </a>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Service Areas */}
+          <div>
+            <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">
+              Service Area
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {SERVICE_AREAS.map((area) => (
+                <li key={area.name}>
+                  {area.name}
+                  {area.zip ? ` ${area.zip}` : ""}
+                </li>
+              ))}
+              <li>Nassau County North Shore</li>
             </ul>
           </div>
 
@@ -71,11 +86,11 @@ export default function Footer() {
                 </address>
               </li>
             </ul>
-            <div className="mt-5 flex gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               {[
-                { href: "#services", label: "Services" },
-                { href: "#coupons", label: "Coupons" },
-                { href: "#contact", label: "Contact" },
+                { href: "/repair/", label: "Repair" },
+                { href: "/faq/", label: "Coupons" },
+                { href: "/#contact", label: "Contact" },
               ].map((l) => (
                 <a
                   key={l.href}

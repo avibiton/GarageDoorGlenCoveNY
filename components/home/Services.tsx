@@ -14,56 +14,60 @@ const services = [
   {
     icon: Wrench,
     title: "Garage Door Repair",
+    href: "/repair/",
     description:
-      "Is your garage door broken, stuck, or making strange noises? Our experienced technicians diagnose and repair all makes and models. We service all major garage door brands and provide on-the-spot repairs whenever possible.",
+      "Is your garage door broken, stuck, or making strange noises? Our experienced technicians diagnose and repair all makes and models — same day throughout Glen Cove and Glen Head.",
     items: [
-      "Broken door repair",
+      "Broken cable & off-track repair",
       "Panel replacement",
-      "Cable & track repair",
+      "Roller & hinge service",
       "All major brands",
     ],
   },
   {
     icon: Settings,
     title: "Garage Door Springs",
+    href: "/repair/",
     description:
-      "Garage door springs are one of the most critical components of your door system. Broken springs prevent your door from operating safely. We repair and replace springs of all sizes and types — torsion and extension.",
+      "Broken springs are one of the most common garage door emergencies. We repair and replace torsion, extension, and high-cycle springs of all sizes. Starting from $165.",
     items: [
       "Torsion spring repair",
       "Extension spring repair",
-      "Spring replacement",
+      "High-cycle springs",
       "All spring sizes",
     ],
   },
   {
     icon: Zap,
     title: "Garage Door Openers",
+    href: "/garage-door-opener/",
     description:
-      "We have extensive experience repairing and replacing garage door openers. From older broken models to new electric openers, we sell, repair, and install openers to keep your garage secure and convenient.",
+      "LiftMaster belt drive for quiet attached garages, wall-mount for low-ceiling capes, battery backup for North Shore storm season. Gear & sprocket from $130.",
     items: [
-      "Opener repair",
-      "New opener installation",
-      "Electric opener service",
-      "Remote programming",
+      "LiftMaster & Genie service",
+      "Belt drive conversions",
+      "Gear & sprocket repair",
+      "MyQ smart setup",
     ],
   },
   {
     icon: DoorOpen,
     title: "Garage Door Installation",
+    href: "/installation/",
     description:
-      "A garage door is the largest moving object in your home. Proper installation is critical for safety and performance. Our skilled technicians handle every step — from measuring to final installation — safely and professionally.",
+      "Clopay, Amarr & Wayne Dalton carriage house, insulated steel, and glass & aluminum door installation. Free in-home estimate. $250 off with code NEWDOOR250.",
     items: [
-      "Residential installation",
-      "Commercial installation",
-      "Custom sizing",
-      "Spring system setup",
+      "Carriage house doors",
+      "Insulated triple-layer steel",
+      "Galvanized coastal hardware",
+      "Custom & oversize doors",
     ],
   },
   {
     icon: Lock,
     title: "Garage Door Locks",
     description:
-      "We sell, repair, and replace both electric and mechanical garage door locks. Whether your lock is damaged or you need an upgrade for better security, our team handles all types of locking systems.",
+      "We sell, repair, and replace both electric and mechanical garage door locks. Whether your lock is damaged or you need an upgrade for better security, our team handles all types.",
     items: [
       "Electric locks",
       "Mechanical locks",
@@ -75,7 +79,7 @@ const services = [
     icon: Building2,
     title: "Residential & Commercial",
     description:
-      "We serve both residential homeowners and commercial businesses throughout the Glen Cove area. From a single-family home garage to a commercial loading bay, our team delivers the same professional standard of service.",
+      "We serve both residential homeowners and commercial businesses throughout Glen Cove, Glen Head, Sea Cliff, and Nassau County North Shore — with the same professional standard.",
     items: [
       "Home garage service",
       "Commercial service",
@@ -92,7 +96,7 @@ export default function Services() {
         <div className="mb-12">
           <SectionHeading
             title="Our Garage Door Services"
-            subtitle="Professional repairs, installation, and emergency service for residential and commercial customers throughout Glen Cove and Long Island."
+            subtitle="Professional repairs, installation, and emergency service for residential and commercial customers throughout Glen Cove, Glen Head, and Nassau County North Shore."
           />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
