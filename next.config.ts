@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Static file redirect (handled here now that public/index.html is removed)
+      {
+        source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
       // Legacy URL patterns from the old site
       {
         source: "/index.php",
