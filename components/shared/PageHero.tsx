@@ -7,6 +7,7 @@ interface PageHeroProps {
   titleAccent?: string;
   subtitle: string;
   ctaLabel?: string;
+  bgImage?: string;
 }
 
 export default function PageHero({
@@ -15,19 +16,34 @@ export default function PageHero({
   titleAccent,
   subtitle,
   ctaLabel = `Call ${BUSINESS.phone} — Free Estimate`,
+  bgImage,
 }: PageHeroProps) {
   return (
     <section className="relative bg-[#171717] pt-32 pb-16 overflow-hidden">
-      {/* Subtle diagonal pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, #ff7a00 0, #ff7a00 1px, transparent 0, transparent 50%)",
-          backgroundSize: "24px 24px",
-        }}
-      />
+      {bgImage ? (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${bgImage})` }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#171717]/95 via-[#171717]/85 to-[#171717]/60"
+            aria-hidden="true"
+          />
+        </>
+      ) : (
+        /* Subtle diagonal pattern fallback */
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(45deg, #ff7a00 0, #ff7a00 1px, transparent 0, transparent 50%)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+      )}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {badge && (

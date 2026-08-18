@@ -73,6 +73,7 @@ export default function InstallationPage() {
           titleAccent="Glen Cove, NY"
           subtitle="Clopay, Amarr & Wayne Dalton carriage house, insulated steel, and glass & aluminum installation throughout Glen Cove NY 11542, Glen Head 11545, Sea Cliff, and Nassau County North Shore. Free in-home estimate."
           ctaLabel={`Call ${BUSINESS.phone} — $250 Off New Door`}
+          bgImage="/images/pic1.jpg"
         />
         <TrustBar
           items={[

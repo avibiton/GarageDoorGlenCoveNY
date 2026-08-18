@@ -127,6 +127,7 @@ export default function FaqPage() {
           titleAccent="Glen Cove & Glen Head, NY"
           subtitle="5 active discount codes for Glen Cove NY 11542, Glen Head 11545, Sea Cliff, and Nassau County North Shore. Mention the code when you call — no printing required."
           ctaLabel={`Call ${BUSINESS.phone} to Redeem`}
+          bgImage="/images/24-7.jpg"
         />
         <TrustBar
           items={[
