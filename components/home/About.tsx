@@ -20,11 +20,11 @@ export default function About() {
           {/* Image side */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="https://images.unsplash.com/photo-1739203469638-d6f54c24a5da?w=1200&q=80&auto=format&fit=crop"
-              alt="Professional garage door technicians servicing a garage door opener"
+              src="https://images.unsplash.com/photo-1625148230889-8195e85aae6b?w=1200&q=80&auto=format&fit=crop"
+              alt="Professional garage door service technician with tool belt and ladder"
               width={600}
-              height={750}
-              className="w-full object-cover object-top"
+              height={450}
+              className="w-full object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-[#171717]/90 backdrop-blur-sm rounded-lg p-4">
