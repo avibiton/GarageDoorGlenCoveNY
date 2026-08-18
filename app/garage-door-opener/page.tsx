@@ -77,7 +77,7 @@ export default function OpenerPage() {
           titleAccent="Glen Cove, NY"
           subtitle="Belt drive for quiet Glen Head split-levels, wall-mount for low-ceiling Glen Cove capes, battery backup for North Shore storms. Same-day service throughout Glen Cove NY 11542 and Glen Head 11545. $99 off any new opener."
           ctaLabel={`Call ${BUSINESS.phone} — $99 Off Opener`}
-          bgImage="/images/openers.jpg"
+          bgImage="https://images.unsplash.com/photo-1734477127040-c5845f5af500?w=1920&q=80&auto=format&fit=crop"
         />
         <TrustBar
           items={[

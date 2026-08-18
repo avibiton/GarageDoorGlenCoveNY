@@ -108,7 +108,7 @@ export default function RepairPage() {
           titleAccent="Glen Cove, NY"
           subtitle="Broken torsion spring, snapped cable, off-track door — we fix it same day throughout Glen Cove NY 11542, Glen Head 11545, Sea Cliff, and Nassau County North Shore. Free written estimate."
           ctaLabel={`Call ${BUSINESS.phone} — Free Estimate`}
-          bgImage="/images/repairs.jpg"
+          bgImage="https://images.unsplash.com/photo-1772652376695-6b3de826ff9f?w=1920&q=80&auto=format&fit=crop"
         />
         <TrustBar
           items={[
