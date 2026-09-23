@@ -40,9 +40,6 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  icons: {
-    icon: [{ url: "/favicon.ico" }],
-  },
 };
 
 export default function RootLayout({
